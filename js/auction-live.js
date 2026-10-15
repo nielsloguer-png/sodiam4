@@ -6,32 +6,35 @@
   if (!root) return;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const $ = s => root.querySelector(s);
-  const fmtM = v => 'US$ ' + (v / 1e6).toLocaleString('pt-PT', { minimumFractionDigits: 3, maximumFractionDigits: 3 }) + ' M';
+  const fmtM = v => v >= 1e6 ? 'US$ ' + (v / 1e6).toLocaleString('pt-PT', { minimumFractionDigits: 3, maximumFractionDigits: 3 }) + ' M'
+    : 'US$ ' + (Math.round(v / 100) * 100).toLocaleString('pt-PT');
   const fmtK = v => 'US$ ' + Math.round(v).toLocaleString('pt-PT');
   const rnd = (a, b) => a + Math.random() * (b - a);
   const pick = a => a[Math.floor(Math.random() * a.length)];
 
   // ---------- dados da simulação ----------
   const CITIES = [
-    { n: 'Antuérpia', c: 'BE', ll: [4.40, 51.22] }, { n: 'Dubai', c: 'AE', ll: [55.27, 25.20] },
-    { n: 'Mumbai', c: 'IN', ll: [72.88, 19.08] }, { n: 'Surat', c: 'IN', ll: [72.83, 21.17] },
-    { n: 'Ramat Gan', c: 'IL', ll: [34.82, 32.08] }, { n: 'Nova Iorque', c: 'US', ll: [-74.0, 40.71] },
-    { n: 'Hong Kong', c: 'HK', ll: [114.17, 22.32] }, { n: 'Joanesburgo', c: 'ZA', ll: [28.05, -26.2] },
-    { n: 'Xangai', c: 'CN', ll: [121.47, 31.23] }, { n: 'Genebra', c: 'CH', ll: [6.14, 46.2] },
-    { n: 'Luanda', c: 'AO', ll: [13.23, -8.84] },
+    { n: 'Antuérpia', c: 'BE', ll: [4.40, 51.22], w: 5 }, { n: 'Dubai', c: 'AE', ll: [55.27, 25.20], w: 5 },
+    { n: 'Mumbai', c: 'IN', ll: [72.88, 19.08], w: 4 }, { n: 'Surat', c: 'IN', ll: [72.83, 21.17], w: 2 },
+    { n: 'Ramat Gan', c: 'IL', ll: [34.82, 32.08], w: 3 }, { n: 'Nova Iorque', c: 'US', ll: [-74.0, 40.71], w: 2 },
+    { n: 'Hong Kong', c: 'HK', ll: [114.17, 22.32], w: 2 }, { n: 'Joanesburgo', c: 'ZA', ll: [28.05, -26.2], w: 1 },
+    { n: 'Xangai', c: 'CN', ll: [121.47, 31.23], w: 1 }, { n: 'Gaborone', c: 'BW', ll: [25.91, -24.65], w: 1 },
+    { n: 'Banguecoque', c: 'TH', ll: [100.5, 13.75], w: 1 }, { n: 'Luanda', c: 'AO', ll: [13.23, -8.84], w: 1 },
   ];
+  const POOL = CITIES.flatMap(c => Array(c.w).fill(c));
   const LUANDA = [13.23, -8.84];
+  // valor de reserva = quilates × preço por quilate (ordens de grandeza dos leilões de pedras especiais)
   const LOTS = [
-    { id: '07', ct: 46.21, d: 'Rosa · Octaedro', base: 2.1e6 }, { id: '12', ct: 114.94, d: 'Branco · Irregular', base: 3.4e6 },
-    { id: '03', ct: 63.48, d: 'Amarelo fancy · Macle', base: 1.6e6 }, { id: '21', ct: 18.76, d: 'D-cor · Octaedro', base: 0.92e6 },
-    { id: '15', ct: 82.30, d: 'Branco · Dodecaedro', base: 2.6e6 }, { id: '09', ct: 27.05, d: 'Castanho claro · Octaedro', base: 0.48e6 },
-  ];
+    { id: '07', ct: 46.21, d: 'Branco · Octaedro', pc: 17500 }, { id: '12', ct: 114.94, d: 'Branco · Irregular', pc: 14800 },
+    { id: '21', ct: 18.76, d: 'Branco · Octaedro', pc: 21000 }, { id: '03', ct: 23.48, d: 'Amarelo claro · Macle', pc: 9200 },
+    { id: '15', ct: 32.30, d: 'Branco · Dodecaedro', pc: 16400 }, { id: '09', ct: 12.05, d: 'Castanho claro · Irregular', pc: 6800 },
+  ].map(l => ({ ...l, base: Math.round(l.ct * l.pc / 1000) * 1000 }));
   const code = () => String.fromCharCode(65 + Math.floor(Math.random() * 26)) + Math.floor(rnd(10, 99));
 
   // ---------- faixa de cotações ----------
   const tape = $('.lv-tape__in');
-  const tapeItem = l => { const ch = rnd(-1.2, 6.5); return `<span><b>LOTE ${l.id}</b> ${l.ct.toLocaleString('pt-PT')} ct <em>${fmtM(l.base * rnd(1.02, 1.3))}</em> <i class="${ch >= 0 ? 'up' : 'dn'}">${ch >= 0 ? '▲' : '▼'} ${Math.abs(ch).toFixed(2).replace('.', ',')}%</i></span>`; };
-  const fillTape = () => { const s = [...LOTS, ...LOTS].map(tapeItem).join('') + `<span><b>ÍNDICE SODIAM</b> US$ 101,70/ct <i class="up">▲ 0,84%</i></span>`; tape.innerHTML = s + s; };
+  const tapeItem = l => { const ch = rnd(-0.8, 2.6); return `<span><b>LOTE ${l.id}</b> ${l.ct.toLocaleString('pt-PT')} ct <em>${fmtM(l.base * rnd(1.0, 1.12))}</em> <i class="${ch >= 0 ? 'up' : 'dn'}">${ch >= 0 ? '▲' : '▼'} ${Math.abs(ch).toFixed(2).replace('.', ',')}%</i></span>`; };
+  const fillTape = () => { const s = [...LOTS, ...LOTS].map(tapeItem).join('') + `<span><b>ÍNDICE SODIAM</b> US$ 101,70/ct <i class="up">▲ 0,31%</i></span>`; tape.innerHTML = s + s; };
   fillTape();
 
   // ---------- estado do lote ----------
@@ -41,13 +44,12 @@
   function newLot() {
     lot = LOTS[lotIdx++ % LOTS.length];
     price = start = lot.base; nBids = 0; series = [price]; closed = false; bidderSet = new Set();
-    endAt = performance.now() + 75000;
+    endAt = performance.now() + 90000;
     el.lot.textContent = lot.id; el.ct.textContent = lot.ct.toLocaleString('pt-PT', { minimumFractionDigits: 2 }) + ' ct';
     el.desc.textContent = lot.d; el.feed.innerHTML = ''; el.stamp.classList.remove('is-on'); el.card.classList.remove('is-closed');
     // abre com histórico: alguns lances já registados e cotação com oscilações
-    for (let i = 0; i < 14; i++) series.push(series[series.length - 1] * (1 + rnd(-0.004, 0.009)));
-    price = series[series.length - 1];
-    for (let i = 0; i < 4; i++) bid(true);
+    for (let i = 0; i < 10; i++) series.push(series[series.length - 1] * (1 + rnd(-0.0008, 0.0016)));
+    for (let i = 0; i < 2; i++) bid(true);
     shown = price; render(true);
   }
 
@@ -64,12 +66,12 @@
 
   function bid(silent) {
     if (closed) return;
-    const city = pick(CITIES.slice(0, -1).concat(nBids % 7 === 3 ? [CITIES[10]] : []));
-    const inc = price * rnd(0.004, 0.022);
+    const city = pick(POOL);
+    const inc = Math.max(500, Math.round(price * rnd(0.0025, 0.012) / 500) * 500);
     price += inc; nBids++;
     // micro-oscilações entre lances, como numa cotação de bolsa
     const prev = series[series.length - 1];
-    series.push(prev + (price - prev) * rnd(0.3, 0.6), price * (1 - rnd(0, 0.003)), price);
+    series.push(prev + (price - prev) * rnd(0.3, 0.6), price * (1 - rnd(0, 0.001)), price);
     while (series.length > 90) series.shift();
     const who = `${city.c}-${code()}`; bidderSet.add(who);
     const li = document.createElement('li');
@@ -77,10 +79,10 @@
     el.feed.prepend(li); requestAnimationFrame(() => li.classList.add('is-in'));
     while (el.feed.children.length > 7) el.feed.lastChild.remove();
     if (!silent) { el.card.classList.remove('flash'); void el.card.offsetWidth; el.card.classList.add('flash'); }
-    if (!silent) { arcs.push({ from: city.ll, t: 0 }); heat = Math.min(1, heat + 0.22); }
+    if (!silent) { arcs.push({ from: city.ll, t: 0 }); heat = Math.min(1, heat + 0.12); }
     // prolongamento anti-sniping: lance nos últimos 10 s dá mais 10 s
     const left = endAt - performance.now();
-    if (left < 10000) endAt += 10000 - left;
+    if (left < 10000) endAt += Math.min(10000 - left, 5000);
   }
 
   // ---------- gráfico ----------
@@ -92,7 +94,8 @@
     cx.strokeStyle = 'rgba(255,255,255,.06)'; cx.lineWidth = 1;
     for (let i = 1; i < 5; i++) { const y = (h / 5) * i; cx.beginPath(); cx.moveTo(0, y); cx.lineTo(w, y); cx.stroke(); }
     if (series.length < 2) return;
-    const mn = Math.min(...series) * 0.995, mx = Math.max(...series) * 1.002;
+    const lo = Math.min(...series), hi = Math.max(...series), span = Math.max(hi - lo, start * 0.06);
+    const mn = lo - span * 0.08, mx = lo + span * 1.1;
     const X = i => (i / (series.length - 1)) * w, Y = v => h - pad - ((v - mn) / (mx - mn || 1)) * (h - pad * 2);
     const g = cx.createLinearGradient(0, 0, 0, h); g.addColorStop(0, 'rgba(201,179,138,.35)'); g.addColorStop(1, 'rgba(201,179,138,0)');
     cx.beginPath(); cx.moveTo(0, h);
@@ -179,7 +182,7 @@
     const dt = Math.min(64, t - (last || t)); last = t;
     // lances: mais rápidos à medida que o tempo acaba (como numa bolsa em fecho)
     const left = Math.max(0, endAt - t);
-    if (!closed && t > nextBid) { bid(); nextBid = t + rnd(700, 2600) * (0.45 + left / 75000 * 0.8); }
+    if (!closed && t > nextBid) { bid(); nextBid = t + rnd(4000, 9000) * (0.55 + left / 90000 * 0.5); }
     if (!closed && left <= 0) {
       closed = true; el.card.classList.add('is-closed'); el.stamp.classList.add('is-on');
       setTimeout(newLot, 5200);
