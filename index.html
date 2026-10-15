@@ -95,7 +95,10 @@ em{font-style:normal}
 .lang button{font:500 10px var(--f-mono);padding:4px 8px;color:var(--ink-3)}
 .lang .is-on{background:var(--ink);color:#fff}
 .hdr__main{display:flex;align-items:center;gap:40px;height:84px;transition:height .4s var(--ease)}
-.hdr__logo img{height:44px;width:auto;transition:height .4s var(--ease)}
+.hdr__logo{flex:none;display:block}
+.hdr__logo img{height:44px;width:auto;max-width:none;flex:none;object-fit:contain;transition:height .4s var(--ease)}
+.ftr__logo{max-width:none;object-fit:contain}
+@media (max-width:1280px){.nav{gap:22px}.nav a{font-size:12px;letter-spacing:.08em}.hdr__main{gap:28px}}
 .nav{display:flex;gap:34px;margin-left:auto}
 .nav a{font:500 13px var(--f-head);letter-spacing:.12em;text-transform:uppercase;position:relative;padding:6px 0}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
@@ -663,7 +666,7 @@ body.on-hero .hdr.is-scrolled{background:rgba(0,0,0,.6)}
     </div>
   </div>
   <div class="wrap hdr__main">
-    <a href="#inicio" class="hdr__logo" aria-label="SODIAM, E.P. — início"><img class="logo-d" src="assets/img/logo-black.png" alt="SODIAM, E.P. — Empresa Nacional de Comercialização de Diamantes de Angola"><img class="logo-l" src="assets/img/logo-footer.png" alt=""></a>
+    <a href="#inicio" class="hdr__logo" aria-label="SODIAM, E.P. — início"><img class="logo-d" src="assets/img/logo-black.png" alt="SODIAM, E.P. — Empresa Nacional de Comercialização de Diamantes de Angola"><img class="logo-l" src="assets/img/logo-white.png" alt=""></a>
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="#institucional">Institucional</a>
       <a href="#cadeia">Operações</a>
@@ -1081,7 +1084,7 @@ body.on-hero .hdr.is-scrolled{background:rgba(0,0,0,.6)}
 <footer class="ftr">
   <div class="wrap">
     <div class="ftr__top">
-      <img class="ftr__logo" src="assets/img/logo-footer.png" alt="SODIAM, E.P.">
+      <img class="ftr__logo" src="assets/img/logo-white.png" alt="SODIAM, E.P.">
       <p class="ftr__claim">Tornar os diamantes em activos que geram <em>futuro brilhante</em> para Angola.</p>
     </div>
     <div class="ftr__cols">
