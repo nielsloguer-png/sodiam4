@@ -1,0 +1,117 @@
+// Conteúdo do blog "Perspectivas" — cada artigo é renderizado em artigo.html?a=<slug>.
+// Proposta: textos de demonstração baseados em comunicados públicos da SODIAM; validar com a Direcção de Comunicação.
+window.POSTS = [
+  {
+    slug: 'resultados-17-leilao',
+    cat: 'Leilões', date: '2026-06-26', read: 4, img: 'assets/img/leilao.jpg', featured: true,
+    title: '17.º leilão: diamantes angolanos superam em 23,46% o valor esperado',
+    lead: 'Encerrado em Luanda, o 17.º leilão de diamantes em bruto da SODIAM gerou cerca de US$ 21,7 milhões líquidos e confirmou a confiança do mercado internacional na produção angolana.',
+    body: [
+      ['p', 'A SODIAM, E.P. encerrou a 26 de Junho de 2026, em Luanda, o 17.º leilão de diamantes em bruto, realizado em parceria com a Trans Atlantic Gem Sales. Foram colocados no mercado 35 diamantes com mais de dez quilates e um lote run-of-mine, num total de 6 586,89 quilates.'],
+      ['h2', 'Um resultado acima das expectativas'],
+      ['p', 'A receita líquida aproximou-se dos US$ 21,7 milhões — cerca de 23,46% acima do valor esperado. Das 34 empresas convidadas, 27 apresentaram propostas, um nível de participação que demonstra a atractividade das pedras especiais angolanas junto dos principais centros mundiais de comercialização.'],
+      ['quote', 'Cada leilão reforça um princípio simples: transparência gera valor — para o Estado, para os produtores e para Angola.'],
+      ['h2', 'Seis anos a abrir caminho'],
+      ['p', 'Desde o primeiro leilão electrónico de pedras especiais, em 2019, a SODIAM consolidou um modelo de venda competitivo, auditável e aberto a compradores qualificados de todo o mundo. O resultado é a formação de preços justos para os diamantes de maior valor produzidos no país.'],
+      ['p', 'Os compradores interessados em participar nos próximos leilões podem registar-se no portal sodiamsales.com para receber catálogos e datas de visualização.'],
+    ],
+  },
+  {
+    slug: 'visita-gia',
+    cat: 'Institucional', date: '2026-01-23', read: 3, img: 'assets/img/news-gia.jpg',
+    title: 'Três Vice-Presidentes do GIA em visita técnica de alto nível à SODIAM',
+    lead: 'A delegação do Gemological Institute of America conheceu de perto os processos de recepção, triagem e avaliação dos diamantes angolanos.',
+    body: [
+      ['p', 'A SODIAM recebeu, em Janeiro de 2026, uma visita técnica de alto nível protagonizada por três Vice-Presidentes do Gemological Institute of America (GIA), uma das instituições de referência mundial em gemologia e certificação de diamantes.'],
+      ['h2', 'Cooperação técnica e formação'],
+      ['p', 'A agenda incluiu a apresentação dos processos de recepção, triagem e avaliação, bem como a discussão de oportunidades de cooperação na formação de quadros angolanos em gemologia — uma prioridade estratégica para acrescentar valor ao diamante dentro do país.'],
+      ['p', 'A visita reforça o posicionamento de Angola como parceiro técnico credível no sector diamantífero internacional.'],
+    ],
+  },
+  {
+    slug: 'exportacoes-2025',
+    cat: 'Mercado', date: '2026-06-04', read: 5, img: 'assets/img/mina-kimberlito.jpg',
+    title: '2025 em números: 17,8 milhões de quilates e US$ 1,8 mil milhões em exportações',
+    lead: 'Angola manteve-se entre os maiores produtores mundiais de diamantes naturais, com um preço médio de US$ 101,70 por quilate.',
+    body: [
+      ['p', 'Em 2025, a SODIAM comercializou aproximadamente 17,8 milhões de quilates de diamantes em bruto, correspondentes a cerca de US$ 1,8 mil milhões, a um preço médio de US$ 101,70 por quilate.'],
+      ['h2', 'Uma produção diversificada'],
+      ['p', 'A produção resulta da actividade de 27 empresas mineiras, kimberlíticas e aluvionares, concentradas sobretudo nas províncias do Leste. A diversidade de origens confere ao diamante angolano um perfil comercial amplo, das pedras de qualidade industrial às pedras especiais de grande valor.'],
+      ['h2', 'Perspectivas'],
+      ['p', 'Num mercado global em ajustamento, a estratégia da SODIAM assenta na estabilidade de preços, na diversificação de canais de venda — sights, spots e leilões — e no reforço da transformação local através do Pólo de Desenvolvimento Diamantífero de Saurimo.'],
+    ],
+  },
+  {
+    slug: 'processo-kimberley',
+    cat: 'Sustentabilidade', date: '2026-04-15', read: 6, img: 'assets/img/triagem-real.jpg',
+    title: 'Processo de Kimberley: como Angola garante diamantes livres de conflito',
+    lead: 'Da mina à exportação, cada lote de diamantes angolanos é registado, certificado e acompanhado por documentação oficial.',
+    body: [
+      ['p', 'O Sistema de Certificação do Processo de Kimberley é o mecanismo internacional que impede a entrada de diamantes de conflito no mercado legítimo. Angola é membro activo e cumpre os seus requisitos em todas as exportações de diamantes em bruto.'],
+      ['h2', 'O papel da SODIAM'],
+      ['p', 'Enquanto canal único de comercialização, a SODIAM assegura que cada lote é recebido, registado, avaliado e exportado com o respectivo certificado. Esta centralização é a base da rastreabilidade do diamante angolano.'],
+      ['quote', 'Rastreabilidade não é um requisito burocrático — é a garantia que dá valor ao diamante angolano no mercado mundial.'],
+      ['h2', 'Transparência reforçada'],
+      ['p', 'A participação na ITIE Angola e a declaração de compromisso com as boas práticas, exigida a todos os parceiros, completam um quadro de integridade que posiciona Angola como origem de confiança.'],
+    ],
+  },
+  {
+    slug: 'como-funciona-leilao',
+    cat: 'Leilões', date: '2026-03-04', read: 5, img: 'assets/img/pedra-especial.jpg',
+    title: 'Como funciona um leilão electrónico de pedras especiais',
+    lead: 'Da selecção das pedras à adjudicação: um guia para compradores que pretendem participar nos leilões da SODIAM.',
+    body: [
+      ['p', 'As pedras especiais — diamantes com mais de 10,80 quilates — são comercializadas por licitação electrónica, um modelo que garante concorrência efectiva e preços de mercado.'],
+      ['h2', '1. Selecção e avaliação'],
+      ['p', 'As pedras são seleccionadas e avaliadas por gemólogos certificados. O catálogo é preparado com informação técnica detalhada para os compradores qualificados.'],
+      ['h2', '2. Visualização'],
+      ['p', 'Os compradores registados são convidados para sessões de visualização presencial, onde podem examinar cada pedra antes de licitar.'],
+      ['h2', '3. Licitação e adjudicação'],
+      ['p', 'As propostas são submetidas em plataforma electrónica segura, em envelope fechado, até à data e hora de encerramento. A adjudicação é feita à melhor proposta, com divulgação pública dos resultados agregados.'],
+    ],
+  },
+  {
+    slug: 'lapidacao-pdds',
+    cat: 'Operações', date: '2026-02-10', read: 4, img: 'assets/img/pdds-aereo.jpg',
+    title: 'Lapidar em Angola: o Pólo de Desenvolvimento Diamantífero de Saurimo',
+    lead: 'Transformar o diamante dentro do país é o próximo passo para multiplicar o seu valor para a economia angolana.',
+    body: [
+      ['p', 'O Pólo de Desenvolvimento Diamantífero de Saurimo (PDDS), na província da Lunda Sul, foi concebido para acolher fábricas de lapidação e polimento, aproximando a indústria das zonas de produção.'],
+      ['h2', 'Valor acrescentado, emprego qualificado'],
+      ['p', 'A lapidação local cria emprego qualificado, desenvolve competências técnicas e retém em Angola uma parte maior do valor de cada diamante. A SODIAM apoia o pólo assegurando o fornecimento de matéria-prima às fábricas instaladas.'],
+      ['p', 'Investidores interessados em instalar unidades de lapidação podem contactar a SODIAM para conhecer as condições de fornecimento e o enquadramento aplicável.'],
+    ],
+  },
+  {
+    slug: 'cefolad-formacao',
+    cat: 'Sustentabilidade', date: '2026-01-08', read: 3, img: 'assets/img/cefolad.jpg',
+    title: 'CEFOLAD: formar a próxima geração de gemólogos e lapidadores angolanos',
+    lead: 'A formação técnica é a base de uma indústria diamantífera nacional competitiva.',
+    body: [
+      ['p', 'O centro de formação CEFOLAD prepara jovens angolanos para as profissões da cadeia de valor do diamante — da triagem e avaliação à lapidação e polimento.'],
+      ['p', 'Ao investir em capital humano, a SODIAM garante que o crescimento do sector se traduz em oportunidades reais para os angolanos.'],
+    ],
+  },
+  {
+    slug: 'encontro-talatona',
+    cat: 'Eventos', date: '2025-12-12', read: 2, img: 'assets/img/news-talatona.jpg',
+    title: 'Encontro de alinhamento e liderança no Centro de Convenções de Talatona',
+    lead: 'Quadros e liderança da SODIAM reuniram-se para alinhar prioridades estratégicas para o novo ciclo.',
+    body: [
+      ['p', 'A SODIAM, E.P. realizou a 12 de Dezembro de 2025, no Hotel e Centro de Convenções de Talatona, um encontro de alinhamento e liderança dedicado às prioridades estratégicas da empresa.'],
+      ['p', 'O encontro reforçou a cultura de rigor, transparência e orientação para resultados que caracteriza a SODIAM.'],
+    ],
+  },
+  {
+    slug: '26-anos',
+    cat: 'Institucional', date: '2025-11-18', read: 3, img: 'assets/img/news-26anos.jpg',
+    title: '26 anos a brilhar com Angola',
+    lead: 'Fundada em Novembro de 1999, a SODIAM celebra mais de um quarto de século como guardiã do valor do diamante angolano.',
+    body: [
+      ['p', 'Desde 1999, a SODIAM é a entidade pública responsável pela comercialização dos diamantes angolanos. Ao longo de 26 anos, construiu um modelo de mercado que combina a protecção do interesse do Estado com a abertura a parceiros internacionais.'],
+      ['h2', 'Pioneirismo'],
+      ['p', 'Foi a SODIAM que introduziu em Angola os leilões electrónicos de pedras especiais, em 2019, abrindo um novo capítulo de transparência na formação de preços.'],
+      ['p', 'O próximo capítulo passa pela transformação local, pela formação de quadros e pelo reforço da rastreabilidade — sempre com o mesmo propósito: tornar os diamantes em activos que geram futuro brilhante para Angola.'],
+    ],
+  },
+];
