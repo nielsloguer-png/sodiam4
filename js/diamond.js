@@ -132,13 +132,13 @@
     f = Math.min(SEQ.count - 1, Math.max(0, f));
     const i0 = Math.floor(f), i1 = Math.min(SEQ.count - 1, i0 + 1), mix = f - i0;
     const idx = Math.round(f);
-    const zoom = 1 + smooth(0.72, 1, sp) * 0.3;
+    const zoom = 1 + smooth(0.72, 1, sp) * 0.12;
     const xf = track(XK, sp);
     const key = Math.round(f * 40) + Math.round(zoom * 1000) * 1e5 + Math.round(xf * 2000) * 1e9;
     const im = nearest(i0), im2 = frames[i1];
     if (im && key !== last) { draw(im, zoom, xf, im2, mix); last = frames[i0] && im2 ? key : -1; }
 
-    set(flash, 'opacity', smooth(0.88, 0.99, sp).toFixed(2));
+    set(flash, 'opacity', '0');
 
     // HUD — só transform/opacity (composição na GPU)
     if (geo.cx !== undefined) set(hud, 'transform', `translate3d(${(geo.cx).toFixed(0)}px,${(geo.cy).toFixed(0)}px,0) translate(-50%,-50%)`);
@@ -162,7 +162,7 @@
     set(bar, 'transform', `scaleX(${p.toFixed(3)})`);
     const st = p < .21 ? 0 : p < .48 ? 1 : p < .76 ? 2 : 3;
     if (st !== stepOn) { stepOn = st; steps.forEach((li, i) => li.classList.toggle('is-on', i === st)); }
-    const oh = r.bottom > 80 && sp < 0.9;
+    const oh = r.bottom > 80;
     if (oh !== onHero) { onHero = oh; document.body.classList.toggle('on-hero', oh); }
   }
   frame();
