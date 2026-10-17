@@ -625,3 +625,22 @@ body.on-hero .hdr.is-scrolled{background:rgba(0,0,0,.6)}
 .pdds figcaption .mono{color:var(--gold-soft)}
 .pdds figcaption b{font:300 clamp(20px,2vw,30px)/1.2 var(--f-head);max-width:760px}
 @media (max-width:760px){.pdds{aspect-ratio:4/3}.pdds figcaption{padding:20px}}
+
+/* ---------- Hero mais limpo (menos texto em simultâneo) ---------- */
+.hud__lbl{display:none!important}
+.hud{color:rgba(255,255,255,.22)}
+.hero__progress ol{display:none}
+.hero__layer--a{top:auto!important;bottom:clamp(78px,13vh,130px);transform:none!important;width:min(640px,46vw)}
+.hero__layer--a .display{font-size:clamp(40px,min(5.2vw,8.6vh),88px)}
+.hero__layer--a .lead{max-width:460px;margin-top:clamp(14px,2.6vh,26px)}
+.hero__layer--a .hero__ctas{margin-top:clamp(18px,3.6vh,36px)}
+.hero__layer--a .eyebrow{margin-bottom:clamp(12px,2.2vh,22px)}
+.hero__layer .display--md{font-size:clamp(34px,min(4.4vw,7.6vh),72px)}
+.hero__layer--b,.hero__layer--c{top:56%}
+.topnews{display:inline-flex;align-items:center;gap:10px;color:inherit;font-size:12px}
+.topnews .mono{background:var(--gold-soft);color:var(--ink);padding:3px 7px;font-size:9px;letter-spacing:.12em}
+.topnews b{font:400 12px var(--f-head);letter-spacing:.02em}
+.topnews i{font-style:normal;color:var(--gold-soft);transition:transform .3s}
+.topnews:hover i{transform:translateX(4px)}
+body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
+@media (max-width:760px){.hero__layer--a{width:auto;left:var(--gut);right:var(--gut);bottom:12vh}.hero__layer--a .display{font-size:clamp(36px,10.5vw,52px)}}

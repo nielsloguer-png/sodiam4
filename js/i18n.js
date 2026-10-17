@@ -25,7 +25,8 @@
     'O brilho de Angola,': 'The brilliance of Angola,', 'gerido com rigor.': 'managed with rigour.',
     'Pioneira na comercialização transparente de diamantes em Angola, a SODIAM é, há mais de 26 anos, o canal através do qual o país leva os seus diamantes ao mundo — com ética, rigor e valor para os angolanos.':
       'A pioneer of transparent diamond trading in Angola, SODIAM has for more than 26 years been the channel through which the country takes its diamonds to the world — with ethics, rigour and value for Angolans.',
-    'Novo': 'New', '17.º leilão: +23,46% acima do valor esperado': '17th auction: +23.46% above expected value',
+    'Novo': 'New',
+    'Há mais de 26 anos, o canal oficial que leva os diamantes de Angola ao mundo — com ética, rigor e transparência.': 'For more than 26 years, the official channel taking Angola’s diamonds to the world — with ethics, rigour and transparency.', '17.º leilão: +23,46% acima do valor esperado': '17th auction: +23.46% above expected value',
     'Conhecer a SODIAM': 'Discover SODIAM', 'Leilões de pedras especiais': 'Special stone auctions',
     'Do subsolo': 'From the ground', 'Do bruto': 'From rough', 'ao brilhante.': 'to brilliant.',
     'Nasce no kimberlito e nos aluviões das Lundas. 27 empresas mineiras — kimberlíticas e aluvionares — entregam a sua produção através de um único canal: a SODIAM.':

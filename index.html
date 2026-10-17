@@ -731,6 +731,26 @@ body.on-hero .hdr.is-scrolled{background:rgba(0,0,0,.6)}
 .mnav .lang{align-self:flex-start;margin-bottom:18px}
 .mnav__foot{display:flex;flex-direction:column;gap:6px}
 </style>
+<style>
+/* ---------- Hero mais limpo (menos texto em simultâneo) ---------- */
+.hud__lbl{display:none!important}
+.hud{color:rgba(255,255,255,.22)}
+.hero__progress ol{display:none}
+.hero__layer--a{top:auto!important;bottom:clamp(78px,13vh,130px);transform:none!important;width:min(640px,46vw)}
+.hero__layer--a .display{font-size:clamp(40px,min(5.2vw,8.6vh),88px)}
+.hero__layer--a .lead{max-width:460px;margin-top:clamp(14px,2.6vh,26px)}
+.hero__layer--a .hero__ctas{margin-top:clamp(18px,3.6vh,36px)}
+.hero__layer--a .eyebrow{margin-bottom:clamp(12px,2.2vh,22px)}
+.hero__layer .display--md{font-size:clamp(34px,min(4.4vw,7.6vh),72px)}
+.hero__layer--b,.hero__layer--c{top:56%}
+.topnews{display:inline-flex;align-items:center;gap:10px;color:inherit;font-size:12px}
+.topnews .mono{background:var(--gold-soft);color:var(--ink);padding:3px 7px;font-size:9px;letter-spacing:.12em}
+.topnews b{font:400 12px var(--f-head);letter-spacing:.02em}
+.topnews i{font-style:normal;color:var(--gold-soft);transition:transform .3s}
+.topnews:hover i{transform:translateX(4px)}
+body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
+@media (max-width:760px){.hero__layer--a{width:auto;left:var(--gut);right:var(--gut);bottom:12vh}.hero__layer--a .display{font-size:clamp(36px,10.5vw,52px)}}
+</style>
 </head>
 <body class="on-hero">
 
@@ -747,7 +767,7 @@ body.on-hero .hdr.is-scrolled{background:rgba(0,0,0,.6)}
 <header class="hdr" id="hdr">
   <div class="hdr__top">
     <div class="wrap hdr__topin">
-      <span class="mono">Empresa Pública · Fundada em 1999 · Luanda, Angola</span>
+      <a class="topnews" href="artigo.html?a=resultados-17-leilao"><span class="mono">Novo</span><b>17.º leilão: +23,46% acima do valor esperado</b><i>→</i></a>
       <div class="hdr__toplinks">
         <a href="https://www.sodiamsales.com" target="_blank" rel="noopener">Portal de Vendas ↗</a>
         <a href="#relatorios">Relatórios</a>
@@ -812,8 +832,7 @@ body.on-hero .hdr.is-scrolled{background:rgba(0,0,0,.6)}
     <div class="hero__layer hero__layer--a" data-from="0" data-to=".19">
       <p class="eyebrow">Desde 1999 · Canal oficial do diamante angolano</p>
       <h1 class="display">O brilho de Angola,<br><em>gerido com rigor.</em></h1>
-      <p class="lead">Pioneira na comercialização transparente de diamantes em Angola, a SODIAM é, há mais de 26 anos, o canal através do qual o país leva os seus diamantes ao mundo — com ética, rigor e valor para os angolanos.</p>
-      <a class="hero__news" href="artigo.html?a=resultados-17-leilao"><span class="mono">Novo</span><b>17.º leilão: +23,46% acima do valor esperado</b><i>→</i></a>
+      <p class="lead">Há mais de 26 anos, o canal oficial que leva os diamantes de Angola ao mundo — com ética, rigor e transparência.</p>
       <div class="hero__ctas">
         <a class="btn btn--ink" href="#institucional">Conhecer a SODIAM</a>
         <a class="btn btn--line" href="#leiloes">Leilões de pedras especiais</a>
@@ -1727,7 +1746,7 @@ addEventListener('load', () => ScrollTrigger.refresh());
     return feather;
   }
   // posição horizontal do diamante (fracção da largura) — alterna com o lado do texto
-  const XK = [[0, 0.64], [0.19, 0.64], [0.25, 0.36], [0.45, 0.36], [0.51, 0.64], [0.73, 0.64], [0.8, 0.5]];
+  const XK = [[0, 0.68], [0.19, 0.68], [0.25, 0.36], [0.45, 0.36], [0.51, 0.64], [0.73, 0.64], [0.8, 0.5]];
   function track(K, x) {
     if (x <= K[0][0]) return K[0][1];
     for (let k = 1; k < K.length; k++) if (x <= K[k][0]) { const [a, va] = K[k - 1], [b, vb] = K[k]; return va + (vb - va) * smooth(a, b, x); }
@@ -2106,9 +2125,10 @@ window.WORLD_DOTS=[[-68.8,-53.6],[-74.2,-51.4],[-70.7,-51.4],[-60.1,-51.4],[-72.
     'Índice de refracção': 'Refractive index', 'Rotação': 'Rotation',
     'Desde 1999 · Canal oficial do diamante angolano': 'Since 1999 · The official channel for Angolan diamonds',
     'O brilho de Angola,': 'The brilliance of Angola,', 'gerido com rigor.': 'managed with rigour.',
-    'Pioneira na comercialização transparente de diamantes em Angola, a SODIAM é, há mais de 26 anos, o canal através do qual o país leva os seus diamantes ao mundo — com ética, rigor e valor para os angolanos.':
+    'Há mais de 26 anos, o canal oficial que leva os diamantes de Angola ao mundo — com ética, rigor e transparência.':
       'A pioneer of transparent diamond trading in Angola, SODIAM has for more than 26 years been the channel through which the country takes its diamonds to the world — with ethics, rigour and value for Angolans.',
-    'Novo': 'New', '17.º leilão: +23,46% acima do valor esperado': '17th auction: +23.46% above expected value',
+    'Novo': 'New',
+    'Há mais de 26 anos, o canal oficial que leva os diamantes de Angola ao mundo — com ética, rigor e transparência.': 'For more than 26 years, the official channel taking Angola’s diamonds to the world — with ethics, rigour and transparency.', '17.º leilão: +23,46% acima do valor esperado': '17th auction: +23.46% above expected value',
     'Conhecer a SODIAM': 'Discover SODIAM', 'Leilões de pedras especiais': 'Special stone auctions',
     'Do subsolo': 'From the ground', 'Do bruto': 'From rough', 'ao brilhante.': 'to brilliant.',
     'Nasce no kimberlito e nos aluviões das Lundas. 27 empresas mineiras — kimberlíticas e aluvionares — entregam a sua produção através de um único canal: a SODIAM.':

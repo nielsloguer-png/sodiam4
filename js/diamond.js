@@ -84,7 +84,7 @@
     return feather;
   }
   // posição horizontal do diamante (fracção da largura) — alterna com o lado do texto
-  const XK = [[0, 0.64], [0.19, 0.64], [0.25, 0.36], [0.45, 0.36], [0.51, 0.64], [0.73, 0.64], [0.8, 0.5]];
+  const XK = [[0, 0.68], [0.19, 0.68], [0.25, 0.36], [0.45, 0.36], [0.51, 0.64], [0.73, 0.64], [0.8, 0.5]];
   function track(K, x) {
     if (x <= K[0][0]) return K[0][1];
     for (let k = 1; k < K.length; k++) if (x <= K[k][0]) { const [a, va] = K[k - 1], [b, vb] = K[k]; return va + (vb - va) * smooth(a, b, x); }
