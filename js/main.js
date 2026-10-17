@@ -81,7 +81,7 @@ gsap.utils.toArray('.reveal-img').forEach(el => {
 });
 
 /* ---------- Contadores ---------- */
-const fmt = (v, d) => v.toLocaleString('pt-PT', { minimumFractionDigits: d, maximumFractionDigits: d });
+const fmt = (v, d) => v.toLocaleString(document.documentElement.lang === 'en' ? 'en-GB' : 'pt-PT', { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: 'always' });
 document.querySelectorAll('.count').forEach(el => {
   const to = +el.dataset.to, d = +(el.dataset.dec || 0), o = { v: 0 };
   ScrollTrigger.create({ trigger: el, start: 'top 90%', once: true, onEnter: () =>

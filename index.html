@@ -751,8 +751,46 @@ body.on-hero .hdr.is-scrolled{background:rgba(0,0,0,.6)}
 body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
 @media (max-width:760px){.hero__layer--a{width:auto;left:var(--gut);right:var(--gut);bottom:12vh}.hero__layer--a .display{font-size:clamp(36px,10.5vw,52px)}}
 </style>
+<style>
+/* ---------- Ritmo vertical mais compacto (padrão corporativo internacional) ---------- */
+.sec,.legacy,.hblog,.auction,.contact{padding-top:clamp(64px,7.5vw,112px);padding-bottom:clamp(64px,7.5vw,112px)}
+.figures{padding:clamp(56px,6vw,88px) 0 clamp(48px,5vw,80px)}
+.sec__head{margin-bottom:clamp(36px,4vw,56px)}
+.hblog__head{margin-bottom:clamp(32px,3.5vw,48px)}
+.mvv{margin-top:clamp(48px,6vw,80px)}
+.auction__stats{margin:clamp(40px,4.5vw,64px) 0}
+.live{margin-bottom:clamp(40px,4.5vw,64px)}
+.steps{margin-top:clamp(48px,5vw,64px)}
+.esg__pillars{margin-bottom:clamp(32px,3.5vw,48px)}
+.pdds{margin-top:clamp(48px,5vw,64px)}
+.figures__head{margin-bottom:clamp(28px,3vw,44px)}
+.chain__pin{padding:clamp(88px,9vw,110px) 0 clamp(32px,4vw,50px)}
+.chain__head{margin-bottom:clamp(24px,3vw,40px)}
+/* secções brancas seguidas ganham fundo alternado para separar sem espaço vazio */
+.legacy{background:var(--mist)}
+.about{background:#fff}
+.roles{background:var(--mist)}
+/* ---------- Acessibilidade ---------- */
+:root{--gold:#7f6334}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.hero :focus-visible,.auction :focus-visible,.ftr :focus-visible,.bnews :focus-visible{outline-color:var(--gold-soft)}
+.skip{position:fixed;left:16px;top:-60px;z-index:200;background:var(--ink);color:#fff;padding:12px 18px;font:500 13px var(--f-head);letter-spacing:.08em;text-transform:uppercase;transition:top .3s}
+.skip:focus{top:16px}
+@media (max-width:760px){
+  .sec,.legacy,.hblog,.auction,.contact{padding-top:56px;padding-bottom:56px}
+  .figures{padding:48px 0 32px}
+  .chain__pin{padding:56px 0}
+}
+</style>
+<style>
+.doc-list .doc-soon{display:grid;grid-template-columns:110px 1fr auto;gap:20px;align-items:center;padding:22px 0;color:var(--ink-3)}
+.doc-list .doc-soon b{font:400 18px/1.35 var(--f-head);color:var(--ink-2)}
+.doc-list .doc-soon em{font:500 10px var(--f-mono);letter-spacing:.1em;font-style:normal;border:1px dashed var(--ink-3);padding:5px 8px;text-transform:uppercase}
+@media (max-width:760px){.doc-list .doc-soon{grid-template-columns:1fr auto;gap:6px 14px}.doc-list .doc-soon .mono{grid-column:1/-1}}
+</style>
 </head>
 <body class="on-hero">
+<a class="skip" href="#main">Saltar para o conteúdo</a>
 
 <!-- Preloader -->
 <div class="loader" id="loader" aria-hidden="true">
@@ -807,7 +845,7 @@ body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
   <a class="btn btn--ink" href="#compradores">Área do Comprador</a></div>
 </div>
 
-<main>
+<main id="main">
 
 <!-- ================= HERO: diamante 3D guiado pelo scroll ================= -->
 <section class="hero" id="inicio">
@@ -842,13 +880,13 @@ body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
     <div class="hero__layer hero__layer--b" data-from=".22" data-to=".46">
       <p class="step mono"><span>01</span> Do subsolo</p>
       <h2 class="display display--md">Do bruto<br><em>ao brilhante.</em></h2>
-      <p class="lead">Nasce no kimberlito e nos aluviões das Lundas. 27 empresas mineiras — kimberlíticas e aluvionares — entregam a sua produção através de um único canal: a SODIAM.</p>
+      <p class="lead">Do kimberlito e dos aluviões das Lundas, 27 empresas mineiras entregam a produção a um único canal: a SODIAM.</p>
     </div>
 
     <div class="hero__layer hero__layer--c" data-from=".5" data-to=".74">
       <p class="step mono"><span>02</span> Ao mercado mundial</p>
       <h2 class="display display--md">Valor angolano,<br><em>confiança global.</em></h2>
-      <p class="lead">Avaliamos, valorizamos e colocamos os diamantes angolanos nos principais centros mundiais — por sights, spots e leilões electrónicos — e promovemos a lapidação em Angola.</p>
+      <p class="lead">Valorizamos e colocamos os diamantes angolanos nos principais centros mundiais — e promovemos a lapidação em Angola.</p>
     </div>
 
     <div class="hero__layer hero__layer--d" data-from=".8" data-to="1.01">
@@ -903,7 +941,7 @@ body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
     <div>
       <p class="eyebrow reveal">Legado</p>
       <h2 class="h2 reveal">Pioneiros do<br><em>diamante angolano.</em></h2>
-      <p class="body reveal">Fomos os primeiros a estruturar a comercialização dos diamantes de Angola num canal único, os primeiros a levar as pedras especiais angolanas a leilão electrónico internacional e somos hoje a referência que define as regras do mercado no país.</p>
+      <p class="body reveal">Os primeiros a organizar o comércio do diamante angolano num canal único e a levar as pedras especiais de Angola a leilão electrónico internacional.</p>
       <div class="legacy__seal reveal">
         <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="32" cy="32" r="25" fill="none" stroke="currentColor" stroke-width=".5" stroke-dasharray="1 2.5"/><path d="M32 17 45 30 32 47 19 30Z M19 30h26 M27 30l5 17 5-17 M25 22l2 8 5-13 5 13 2-8" fill="none" stroke="currentColor" stroke-width="1"/></svg>
         <span class="mono">26 anos de referência<br>no sector diamantífero</span>
@@ -926,7 +964,7 @@ body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
     <div class="about__intro">
       <p class="eyebrow reveal">Institucional</p>
       <h2 class="h2 reveal">A entidade que garante a <em>integridade</em> do diamante angolano.</h2>
-      <p class="body reveal">A SODIAM, E.P. é a empresa pública que controla e supervisiona a comercialização de diamantes em Angola. Somos o canal único através do qual a produção nacional é avaliada, negociada e exportada — protegendo o valor do recurso para o Estado, para as empresas e para as comunidades.</p>
+      <p class="body reveal">A empresa pública que controla e supervisiona a comercialização de diamantes em Angola — o canal único por onde a produção nacional é avaliada, negociada e exportada.</p>
       <a class="link reveal" href="#governacao">Governação e Conselho de Administração <span>→</span></a>
     </div>
     <figure class="about__img reveal-img">
@@ -971,23 +1009,23 @@ body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
     <div class="chain__track" id="chainTrack">
       <article class="stage">
         <div class="stage__img"><img src="assets/img/mina-kimberlito.webp" alt="Vista aérea de mina kimberlítica a céu aberto em Angola" loading="lazy"></div>
-        <div class="stage__txt"><span class="mono">01 · Extracção</span><h3>Produção nacional</h3><p>Minas kimberlíticas e explorações aluvionares nas províncias diamantíferas entregam a produção à SODIAM, que recebe e regista cada lote.</p></div>
+        <div class="stage__txt"><span class="mono">01 · Extracção</span><h3>Produção nacional</h3><p>Minas kimberlíticas e aluvionares entregam a produção à SODIAM, que regista cada lote.</p></div>
       </article>
       <article class="stage">
         <div class="stage__img"><img src="assets/img/triagem-real.webp" alt="Triagem de diamantes em bruto na SODIAM" loading="lazy"></div>
-        <div class="stage__txt"><span class="mono">02 · Triagem</span><h3>Recepção e classificação</h3><p>Os diamantes são triados por tamanho, modelo, qualidade e cor, em ambiente seguro e auditável, com rastreabilidade de origem.</p></div>
+        <div class="stage__txt"><span class="mono">02 · Triagem</span><h3>Recepção e classificação</h3><p>Triagem por tamanho, modelo, qualidade e cor, com rastreabilidade de origem.</p></div>
       </article>
       <article class="stage">
         <div class="stage__img"><img src="assets/img/bruto-pilha.webp" alt="Lote de diamantes angolanos em bruto" loading="lazy"></div>
-        <div class="stage__txt"><span class="mono">03 · Avaliação</span><h3>Valorização independente</h3><p>Gemólogos certificados determinam o valor de mercado de cada lote, garantindo um preço justo ao Estado e aos produtores.</p></div>
+        <div class="stage__txt"><span class="mono">03 · Avaliação</span><h3>Valorização independente</h3><p>Gemólogos certificados fixam o valor de mercado de cada lote — preço justo para o Estado e os produtores.</p></div>
       </article>
       <article class="stage">
         <div class="stage__img"><img src="assets/img/leilao.webp" alt="Compradores internacionais avaliam diamantes numa sala de visualização" loading="lazy"></div>
-        <div class="stage__txt"><span class="mono">04 · Comercialização</span><h3>Sights, spots e leilões</h3><p>Venda a clientes de referência, operações pontuais e leilões electrónicos de pedras especiais, abertos a compradores internacionais qualificados.</p></div>
+        <div class="stage__txt"><span class="mono">04 · Comercialização</span><h3>Sights, spots e leilões</h3><p>Sights, spots e leilões electrónicos abertos a compradores internacionais qualificados.</p></div>
       </article>
       <article class="stage">
         <div class="stage__img"><img src="assets/img/fabrica-lapidacao.webp" alt="Fábrica de lapidação no Pólo de Desenvolvimento Diamantífero de Saurimo" loading="lazy"></div>
-        <div class="stage__txt"><span class="mono">05 · Transformação</span><h3>Lapidação em Angola</h3><p>O Pólo de Desenvolvimento Diamantífero de Saurimo (PDDS) e o centro de formação CEFOLAD acrescentam valor ao diamante dentro do país.</p></div>
+        <div class="stage__txt"><span class="mono">05 · Transformação</span><h3>Lapidação em Angola</h3><p>O PDDS e o centro de formação CEFOLAD acrescentam valor ao diamante dentro do país.</p></div>
       </article>
     </div>
   </div>
@@ -1015,7 +1053,7 @@ body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
     <div class="map__txt">
       <p class="eyebrow reveal">Angola diamantífera</p>
       <h2 class="h2 reveal">Um recurso nacional,<br><em>do Leste ao mundo.</em></h2>
-      <p class="body reveal">A produção concentra-se nas províncias do Leste — com as Lundas no centro da actividade kimberlítica e aluvionar. Em Luanda, a sede coordena a comercialização; em Saurimo, o PDDS transforma diamante em indústria.</p>
+      <p class="body reveal">A produção concentra-se no Leste, com as Lundas no centro. Luanda coordena a comercialização; Saurimo transforma o diamante em indústria.</p>
       <ul class="map__legend reveal mono">
         <li><i class="lg lg--1"></i>Principais províncias produtoras</li>
         <li><i class="lg lg--2"></i>Outras províncias com ocorrências</li>
@@ -1037,7 +1075,7 @@ body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
     <div class="auction__head">
       <p class="eyebrow eyebrow--light reveal">Leilões de pedras especiais</p>
       <h2 class="h2 h2--light reveal">17.º leilão de diamantes em bruto.<br><em>23,46% acima do valor esperado.</em></h2>
-      <p class="body body--light reveal">Encerrado a 26 de Junho de 2026, em Luanda, com a Trans Atlantic Gem Sales. Desde 2019, os leilões electrónicos da SODIAM trazem transparência e preços de mercado às pedras de maior valor de Angola.</p>
+      <p class="body body--light reveal">Encerrado a 26 de Junho de 2026, em Luanda. Desde 2019, os leilões electrónicos da SODIAM dão transparência e preço de mercado às pedras de maior valor de Angola.</p>
     </div>
     <div class="auction__stats">
       <div class="astat reveal"><b>US$ <span class="count" data-to="21.7" data-dec="1">0</span> M</b><span>Receita líquida</span></div>
@@ -1101,7 +1139,7 @@ body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
         <p class="eyebrow reveal">Oportunidades</p>
         <h2 class="h2 reveal">Um mercado aberto<br><em>a parceiros de confiança.</em></h2>
       </div>
-      <p class="body reveal">Angola abre-se a novos agentes do mercado de diamantes e à lapidação em território nacional. A SODIAM é a porta de entrada, com regras claras e um processo de qualificação rigoroso.</p>
+      <p class="body reveal">Regras claras e um processo de qualificação rigoroso para novos compradores e para investidores na lapidação em Angola.</p>
     </div>
     <div class="opp__grid">
       <a class="opp__card reveal" href="#contactos"><span class="mono">A</span><h3>Sights</h3><p>Fornecimento regular a clientes de referência, com contratos e volumes previsíveis.</p><i>→</i></a>
@@ -1133,7 +1171,7 @@ body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
         <p class="eyebrow reveal">Sustentabilidade e impacto</p>
         <h2 class="h2 reveal">O valor do diamante<br><em>volta para as pessoas.</em></h2>
       </div>
-      <p class="body reveal">Cada empresa que opera com a SODIAM assina uma declaração de compromisso com as boas práticas. Rastreabilidade, conformidade com o Processo de Kimberley e participação na ITIE Angola sustentam a confiança no diamante angolano.</p>
+      <p class="body reveal">Rastreabilidade total, Processo de Kimberley e ITIE Angola: a base da confiança no diamante angolano.</p>
     </div>
 
     <div class="esg__pillars">
@@ -1166,11 +1204,11 @@ body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
     <div id="governacao">
       <p class="eyebrow reveal">Governação</p>
       <h2 class="h2 reveal">Transparência<br><em>como princípio.</em></h2>
-      <p class="body reveal">Publicamos relatórios, contas e dados de mercado para que o Estado, os parceiros e os cidadãos acompanhem o desempenho do sector diamantífero.</p>
+      <p class="body reveal">Relatórios, contas e dados de mercado públicos, para que todos acompanhem o desempenho do sector.</p>
       <div class="gov reveal">
-        <a href="#"><span>Conselho de Administração</span><i>→</i></a>
-        <a href="#"><span>Estatutos e enquadramento legal</span><i>→</i></a>
-        <a href="#"><span>Política de Comercialização de Diamantes</span><i>→</i></a>
+        <a href="administracao.html"><span>Conselho de Administração</span><i>→</i></a>
+        <a href="administracao.html#enquadramento"><span>Estatutos e enquadramento legal</span><i>→</i></a>
+        <a href="administracao.html#enquadramento"><span>Política de Comercialização de Diamantes</span><i>→</i></a>
         <a href="#contactos"><span>Código de ética e canal de denúncias</span><i>→</i></a>
       </div>
     </div>
@@ -1184,10 +1222,10 @@ body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
       <ul class="doc-list">
         <li data-c="com"><a href="https://sodiam.co.ao/wp-content/uploads/2026/06/COMUNICADO-DE-IMPRESA_26-06-2026-.pdf" target="_blank" rel="noopener"><span class="mono">26.06.2026</span><b>Comunicado de imprensa — Resultados do 17.º leilão</b><em>PDF</em></a></li>
         <li data-c="com"><a href="https://sodiam.co.ao/wp-content/uploads/2026/06/ANUNCIO-COMUNICADO-DE-IMPRESA_04062026.pdf" target="_blank" rel="noopener"><span class="mono">04.06.2026</span><b>Anúncio — Leilão online de 35 diamantes acima de 10 ct</b><em>PDF</em></a></li>
-        <li data-c="rel"><a href="#"><span class="mono">2025</span><b>Relatório e Contas 2025</b><em>PDF</em></a></li>
-        <li data-c="out"><a href="#"><span class="mono">2026</span><b>Outlook do mercado de diamantes — Angola</b><em>PDF</em></a></li>
-        <li data-c="rel"><a href="#"><span class="mono">2025</span><b>Relatório de Sustentabilidade e Impacto</b><em>PDF</em></a></li>
-        <li data-c="com"><a href="#"><span class="mono">09.01.2026</span><b>Comunicado de imprensa</b><em>PDF</em></a></li>
+        <li data-c="rel" class="is-soon"><span class="doc-soon"><span class="mono">2025</span><b>Relatório e Contas 2025</b><em>Em breve</em></span></li>
+        <li data-c="out" class="is-soon"><span class="doc-soon"><span class="mono">2026</span><b>Outlook do mercado de diamantes — Angola</b><em>Em breve</em></span></li>
+        <li data-c="rel" class="is-soon"><span class="doc-soon"><span class="mono">2025</span><b>Relatório de Sustentabilidade e Impacto</b><em>Em breve</em></span></li>
+        <li data-c="com" class="is-soon"><span class="doc-soon"><span class="mono">09.01.2026</span><b>Comunicado de imprensa</b><em>Em breve</em></span></li>
       </ul>
     </div>
   </div>
@@ -1234,15 +1272,15 @@ body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
       <p class="ftr__claim">Tornar os diamantes em activos que geram <em>futuro brilhante</em> para Angola.</p>
     </div>
     <div class="ftr__cols">
-      <div><h4 class="mono">Institucional</h4><a href="#institucional">Sobre nós</a><a href="#governacao">Governação</a><a href="#relatorios">Relatórios</a><a href="#">Carreiras</a></div>
+      <div><h4 class="mono">Institucional</h4><a href="#institucional">Sobre nós</a><a href="administracao.html">Administração</a><a href="#relatorios">Relatórios</a><a href="carreiras.html">Carreiras</a></div>
       <div><h4 class="mono">Operações</h4><a href="#cadeia">Comercialização</a><a href="#cadeia">Lapidação — PDDS</a><a href="#sustentabilidade">Formação — CEFOLAD</a><a href="#leiloes">Leilões</a></div>
-      <div><h4 class="mono">Ligações</h4><a href="https://itieangola.org/" target="_blank" rel="noopener">ITIE Angola ↗</a><a href="https://www.aidc-angola.com/" target="_blank" rel="noopener">AIDC ↗</a><a href="https://www.kimberleyprocess.com/" target="_blank" rel="noopener">Processo de Kimberley ↗</a><a href="#">Perguntas frequentes</a></div>
+      <div><h4 class="mono">Ligações</h4><a href="https://itieangola.org/" target="_blank" rel="noopener">ITIE Angola ↗</a><a href="https://www.aidc-angola.com/" target="_blank" rel="noopener">AIDC ↗</a><a href="https://www.kimberleyprocess.com/" target="_blank" rel="noopener">Processo de Kimberley ↗</a><a href="faq.html">Perguntas frequentes</a></div>
       <div><h4 class="mono">Newsletter</h4><p>Comunicados, leilões e relatórios no seu e-mail.</p><form class="nl" onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscrito ✓'"><input type="email" placeholder="O seu e-mail" aria-label="E-mail" required><button>Subscrever</button></form></div>
     </div>
     <div class="ftr__bot mono">
       <span>© 2000–2026 SODIAM, E.P. · Todos os direitos reservados</span>
       <span class="ftr__flag" aria-hidden="true"><i></i><i></i></span>
-      <span><a href="#">Privacidade</a> · <a href="#">Termos</a> · <a href="#">Acessibilidade</a></span>
+      <span><a href="legal.html#privacidade">Privacidade</a> · <a href="legal.html#termos">Termos</a> · <a href="legal.html#acessibilidade">Acessibilidade</a></span>
     </div>
   </div>
 </footer>
@@ -1487,7 +1525,7 @@ gsap.utils.toArray('.reveal-img').forEach(el => {
 });
 
 /* ---------- Contadores ---------- */
-const fmt = (v, d) => v.toLocaleString('pt-PT', { minimumFractionDigits: d, maximumFractionDigits: d });
+const fmt = (v, d) => v.toLocaleString(document.documentElement.lang === 'en' ? 'en-GB' : 'pt-PT', { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: 'always' });
 document.querySelectorAll('.count').forEach(el => {
   const to = +el.dataset.to, d = +(el.dataset.dec || 0), o = { v: 0 };
   ScrollTrigger.create({ trigger: el, start: 'top 90%', once: true, onEnter: () =>
@@ -2128,6 +2166,22 @@ window.WORLD_DOTS=[[-68.8,-53.6],[-74.2,-51.4],[-70.7,-51.4],[-60.1,-51.4],[-72.
     'Há mais de 26 anos, o canal oficial que leva os diamantes de Angola ao mundo — com ética, rigor e transparência.':
       'A pioneer of transparent diamond trading in Angola, SODIAM has for more than 26 years been the channel through which the country takes its diamonds to the world — with ethics, rigour and value for Angolans.',
     'Novo': 'New',
+    'Saltar para o conteúdo': 'Skip to content', 'Administração e Governação': 'Leadership and Governance', 'Carreiras': 'Careers', 'Privacidade, termos e acessibilidade': 'Privacy, terms and accessibility', 'Índice': 'Contents', 'Em breve': 'Coming soon', 'Administração': 'Leadership',
+    'Perguntas frequentes': 'FAQ', 'Legal': 'Legal', 'Enquadramento legal': 'Legal framework',
+    'Valorizamos e colocamos os diamantes angolanos nos principais centros mundiais — e promovemos a lapidação em Angola.': 'We value Angolan diamonds and place them in the world’s leading centres — while promoting cutting in Angola.',
+    'Do kimberlito e dos aluviões das Lundas, 27 empresas mineiras entregam a produção a um único canal: a SODIAM.': 'From the kimberlites and alluvials of the Lundas, 27 mining companies deliver their output to a single channel: SODIAM.',
+    'O PDDS e o centro de formação CEFOLAD acrescentam valor ao diamante dentro do país.': 'The PDDS and the CEFOLAD training centre add value to diamonds inside the country.',
+    'Sights, spots e leilões electrónicos abertos a compradores internacionais qualificados.': 'Sights, spots and electronic auctions open to qualified international buyers.',
+    'Gemólogos certificados fixam o valor de mercado de cada lote — preço justo para o Estado e os produtores.': 'Certified gemologists set each lot’s market value — a fair price for the State and producers.',
+    'Triagem por tamanho, modelo, qualidade e cor, com rastreabilidade de origem.': 'Sorted by size, model, quality and colour, with full traceability of origin.',
+    'Minas kimberlíticas e aluvionares entregam a produção à SODIAM, que regista cada lote.': 'Kimberlite and alluvial mines deliver their output to SODIAM, which records every lot.',
+    'Relatórios, contas e dados de mercado públicos, para que todos acompanhem o desempenho do sector.': 'Reports, accounts and market data made public, so everyone can follow the sector’s performance.',
+    'Rastreabilidade total, Processo de Kimberley e ITIE Angola: a base da confiança no diamante angolano.': 'Full traceability, the Kimberley Process and EITI Angola: the foundation of trust in Angolan diamonds.',
+    'Regras claras e um processo de qualificação rigoroso para novos compradores e para investidores na lapidação em Angola.': 'Clear rules and a rigorous qualification process for new buyers and for investors in cutting in Angola.',
+    'Encerrado a 26 de Junho de 2026, em Luanda. Desde 2019, os leilões electrónicos da SODIAM dão transparência e preço de mercado às pedras de maior valor de Angola.': 'Closed on 26 June 2026 in Luanda. Since 2019, SODIAM’s electronic auctions have brought transparency and market prices to Angola’s most valuable stones.',
+    'A produção concentra-se no Leste, com as Lundas no centro. Luanda coordena a comercialização; Saurimo transforma o diamante em indústria.': 'Production is concentrated in the East, with the Lundas at its heart. Luanda coordinates trading; Saurimo turns diamonds into industry.',
+    'Os primeiros a organizar o comércio do diamante angolano num canal único e a levar as pedras especiais de Angola a leilão electrónico internacional.': 'The first to organise Angola’s diamond trade into a single channel and to take Angolan special stones to international electronic auction.',
+    'A empresa pública que controla e supervisiona a comercialização de diamantes em Angola — o canal único por onde a produção nacional é avaliada, negociada e exportada.': 'The state-owned company that controls and supervises diamond trading in Angola — the single channel through which national production is valued, negotiated and exported.',
     'Há mais de 26 anos, o canal oficial que leva os diamantes de Angola ao mundo — com ética, rigor e transparência.': 'For more than 26 years, the official channel taking Angola’s diamonds to the world — with ethics, rigour and transparency.', '17.º leilão: +23,46% acima do valor esperado': '17th auction: +23.46% above expected value',
     'Conhecer a SODIAM': 'Discover SODIAM', 'Leilões de pedras especiais': 'Special stone auctions',
     'Do subsolo': 'From the ground', 'Do bruto': 'From rough', 'ao brilhante.': 'to brilliant.',
@@ -2394,11 +2448,18 @@ window.WORLD_DOTS=[[-68.8,-53.6],[-74.2,-51.4],[-70.7,-51.4],[-60.1,-51.4],[-72.
     }
     busy = false;
   });
+  // blocos com versão inglesa escrita à mão (data-en) — usados nas páginas institucionais
+  function bilingual() {
+    document.querySelectorAll('[data-en]').forEach(el => {
+      if (lang === 'en') { if (!el.hasAttribute('data-pt')) el.setAttribute('data-pt', el.innerHTML); el.innerHTML = el.getAttribute('data-en'); }
+      else if (el.hasAttribute('data-pt')) { el.innerHTML = el.getAttribute('data-pt'); el.removeAttribute('data-pt'); }
+    });
+  }
   function apply(l) {
     lang = l;
     try { localStorage.setItem('sodiam-lang', l); } catch (e) {}
     document.documentElement.lang = l === 'en' ? 'en' : 'pt-AO';
-    busy = true; walk(document.body); busy = false;
+    busy = true; bilingual(); walk(document.body); busy = false;
     // título do separador
     if (!window.__ptTitle) window.__ptTitle = document.title;
     document.title = l === 'en' ? window.__ptTitle.split(' — ').map(x => tr(x) ?? x).join(' — ') : window.__ptTitle;

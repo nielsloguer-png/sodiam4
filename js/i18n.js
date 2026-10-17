@@ -26,6 +26,22 @@
     'Pioneira na comercialização transparente de diamantes em Angola, a SODIAM é, há mais de 26 anos, o canal através do qual o país leva os seus diamantes ao mundo — com ética, rigor e valor para os angolanos.':
       'A pioneer of transparent diamond trading in Angola, SODIAM has for more than 26 years been the channel through which the country takes its diamonds to the world — with ethics, rigour and value for Angolans.',
     'Novo': 'New',
+    'Saltar para o conteúdo': 'Skip to content', 'Em breve': 'Coming soon', 'Administração': 'Leadership',
+    'Perguntas frequentes': 'FAQ', 'Legal': 'Legal', 'Enquadramento legal': 'Legal framework',
+    'Valorizamos e colocamos os diamantes angolanos nos principais centros mundiais — e promovemos a lapidação em Angola.': 'We value Angolan diamonds and place them in the world’s leading centres — while promoting cutting in Angola.',
+    'Do kimberlito e dos aluviões das Lundas, 27 empresas mineiras entregam a produção a um único canal: a SODIAM.': 'From the kimberlites and alluvials of the Lundas, 27 mining companies deliver their output to a single channel: SODIAM.',
+    'O PDDS e o centro de formação CEFOLAD acrescentam valor ao diamante dentro do país.': 'The PDDS and the CEFOLAD training centre add value to diamonds inside the country.',
+    'Sights, spots e leilões electrónicos abertos a compradores internacionais qualificados.': 'Sights, spots and electronic auctions open to qualified international buyers.',
+    'Gemólogos certificados fixam o valor de mercado de cada lote — preço justo para o Estado e os produtores.': 'Certified gemologists set each lot’s market value — a fair price for the State and producers.',
+    'Triagem por tamanho, modelo, qualidade e cor, com rastreabilidade de origem.': 'Sorted by size, model, quality and colour, with full traceability of origin.',
+    'Minas kimberlíticas e aluvionares entregam a produção à SODIAM, que regista cada lote.': 'Kimberlite and alluvial mines deliver their output to SODIAM, which records every lot.',
+    'Relatórios, contas e dados de mercado públicos, para que todos acompanhem o desempenho do sector.': 'Reports, accounts and market data made public, so everyone can follow the sector’s performance.',
+    'Rastreabilidade total, Processo de Kimberley e ITIE Angola: a base da confiança no diamante angolano.': 'Full traceability, the Kimberley Process and EITI Angola: the foundation of trust in Angolan diamonds.',
+    'Regras claras e um processo de qualificação rigoroso para novos compradores e para investidores na lapidação em Angola.': 'Clear rules and a rigorous qualification process for new buyers and for investors in cutting in Angola.',
+    'Encerrado a 26 de Junho de 2026, em Luanda. Desde 2019, os leilões electrónicos da SODIAM dão transparência e preço de mercado às pedras de maior valor de Angola.': 'Closed on 26 June 2026 in Luanda. Since 2019, SODIAM’s electronic auctions have brought transparency and market prices to Angola’s most valuable stones.',
+    'A produção concentra-se no Leste, com as Lundas no centro. Luanda coordena a comercialização; Saurimo transforma o diamante em indústria.': 'Production is concentrated in the East, with the Lundas at its heart. Luanda coordinates trading; Saurimo turns diamonds into industry.',
+    'Os primeiros a organizar o comércio do diamante angolano num canal único e a levar as pedras especiais de Angola a leilão electrónico internacional.': 'The first to organise Angola’s diamond trade into a single channel and to take Angolan special stones to international electronic auction.',
+    'A empresa pública que controla e supervisiona a comercialização de diamantes em Angola — o canal único por onde a produção nacional é avaliada, negociada e exportada.': 'The state-owned company that controls and supervises diamond trading in Angola — the single channel through which national production is valued, negotiated and exported.',
     'Há mais de 26 anos, o canal oficial que leva os diamantes de Angola ao mundo — com ética, rigor e transparência.': 'For more than 26 years, the official channel taking Angola’s diamonds to the world — with ethics, rigour and transparency.', '17.º leilão: +23,46% acima do valor esperado': '17th auction: +23.46% above expected value',
     'Conhecer a SODIAM': 'Discover SODIAM', 'Leilões de pedras especiais': 'Special stone auctions',
     'Do subsolo': 'From the ground', 'Do bruto': 'From rough', 'ao brilhante.': 'to brilliant.',
@@ -292,11 +308,18 @@
     }
     busy = false;
   });
+  // blocos com versão inglesa escrita à mão (data-en) — usados nas páginas institucionais
+  function bilingual() {
+    document.querySelectorAll('[data-en]').forEach(el => {
+      if (lang === 'en') { if (!el.hasAttribute('data-pt')) el.setAttribute('data-pt', el.innerHTML); el.innerHTML = el.getAttribute('data-en'); }
+      else if (el.hasAttribute('data-pt')) { el.innerHTML = el.getAttribute('data-pt'); el.removeAttribute('data-pt'); }
+    });
+  }
   function apply(l) {
     lang = l;
     try { localStorage.setItem('sodiam-lang', l); } catch (e) {}
     document.documentElement.lang = l === 'en' ? 'en' : 'pt-AO';
-    busy = true; walk(document.body); busy = false;
+    busy = true; bilingual(); walk(document.body); busy = false;
     // título do separador
     if (!window.__ptTitle) window.__ptTitle = document.title;
     document.title = l === 'en' ? window.__ptTitle.split(' — ').map(x => tr(x) ?? x).join(' — ') : window.__ptTitle;

@@ -644,3 +644,38 @@ body.on-hero .hdr.is-scrolled{background:rgba(0,0,0,.6)}
 .topnews:hover i{transform:translateX(4px)}
 body:not(.on-hero) .topnews .mono{background:var(--ink);color:#fff}
 @media (max-width:760px){.hero__layer--a{width:auto;left:var(--gut);right:var(--gut);bottom:12vh}.hero__layer--a .display{font-size:clamp(36px,10.5vw,52px)}}
+
+/* ---------- Ritmo vertical mais compacto (padrão corporativo internacional) ---------- */
+.sec,.legacy,.hblog,.auction,.contact{padding-top:clamp(64px,7.5vw,112px);padding-bottom:clamp(64px,7.5vw,112px)}
+.figures{padding:clamp(56px,6vw,88px) 0 clamp(48px,5vw,80px)}
+.sec__head{margin-bottom:clamp(36px,4vw,56px)}
+.hblog__head{margin-bottom:clamp(32px,3.5vw,48px)}
+.mvv{margin-top:clamp(48px,6vw,80px)}
+.auction__stats{margin:clamp(40px,4.5vw,64px) 0}
+.live{margin-bottom:clamp(40px,4.5vw,64px)}
+.steps{margin-top:clamp(48px,5vw,64px)}
+.esg__pillars{margin-bottom:clamp(32px,3.5vw,48px)}
+.pdds{margin-top:clamp(48px,5vw,64px)}
+.figures__head{margin-bottom:clamp(28px,3vw,44px)}
+.chain__pin{padding:clamp(88px,9vw,110px) 0 clamp(32px,4vw,50px)}
+.chain__head{margin-bottom:clamp(24px,3vw,40px)}
+/* secções brancas seguidas ganham fundo alternado para separar sem espaço vazio */
+.legacy{background:var(--mist)}
+.about{background:#fff}
+.roles{background:var(--mist)}
+/* ---------- Acessibilidade ---------- */
+:root{--gold:#7f6334}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.hero :focus-visible,.auction :focus-visible,.ftr :focus-visible,.bnews :focus-visible{outline-color:var(--gold-soft)}
+.skip{position:fixed;left:16px;top:-60px;z-index:200;background:var(--ink);color:#fff;padding:12px 18px;font:500 13px var(--f-head);letter-spacing:.08em;text-transform:uppercase;transition:top .3s}
+.skip:focus{top:16px}
+@media (max-width:760px){
+  .sec,.legacy,.hblog,.auction,.contact{padding-top:56px;padding-bottom:56px}
+  .figures{padding:48px 0 32px}
+  .chain__pin{padding:56px 0}
+}
+
+.doc-list .doc-soon{display:grid;grid-template-columns:110px 1fr auto;gap:20px;align-items:center;padding:22px 0;color:var(--ink-3)}
+.doc-list .doc-soon b{font:400 18px/1.35 var(--f-head);color:var(--ink-2)}
+.doc-list .doc-soon em{font:500 10px var(--f-mono);letter-spacing:.1em;font-style:normal;border:1px dashed var(--ink-3);padding:5px 8px;text-transform:uppercase}
+@media (max-width:760px){.doc-list .doc-soon{grid-template-columns:1fr auto;gap:6px 14px}.doc-list .doc-soon .mono{grid-column:1/-1}}

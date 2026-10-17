@@ -663,8 +663,46 @@ body.on-hero .hdr.is-scrolled{background:rgba(0,0,0,.6)}
 .mnav .lang{align-self:flex-start;margin-bottom:18px}
 .mnav__foot{display:flex;flex-direction:column;gap:6px}
 </style>
+<style>
+/* ---------- Ritmo vertical mais compacto (padrão corporativo internacional) ---------- */
+.sec,.legacy,.hblog,.auction,.contact{padding-top:clamp(64px,7.5vw,112px);padding-bottom:clamp(64px,7.5vw,112px)}
+.figures{padding:clamp(56px,6vw,88px) 0 clamp(48px,5vw,80px)}
+.sec__head{margin-bottom:clamp(36px,4vw,56px)}
+.hblog__head{margin-bottom:clamp(32px,3.5vw,48px)}
+.mvv{margin-top:clamp(48px,6vw,80px)}
+.auction__stats{margin:clamp(40px,4.5vw,64px) 0}
+.live{margin-bottom:clamp(40px,4.5vw,64px)}
+.steps{margin-top:clamp(48px,5vw,64px)}
+.esg__pillars{margin-bottom:clamp(32px,3.5vw,48px)}
+.pdds{margin-top:clamp(48px,5vw,64px)}
+.figures__head{margin-bottom:clamp(28px,3vw,44px)}
+.chain__pin{padding:clamp(88px,9vw,110px) 0 clamp(32px,4vw,50px)}
+.chain__head{margin-bottom:clamp(24px,3vw,40px)}
+/* secções brancas seguidas ganham fundo alternado para separar sem espaço vazio */
+.legacy{background:var(--mist)}
+.about{background:#fff}
+.roles{background:var(--mist)}
+/* ---------- Acessibilidade ---------- */
+:root{--gold:#7f6334}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.hero :focus-visible,.auction :focus-visible,.ftr :focus-visible,.bnews :focus-visible{outline-color:var(--gold-soft)}
+.skip{position:fixed;left:16px;top:-60px;z-index:200;background:var(--ink);color:#fff;padding:12px 18px;font:500 13px var(--f-head);letter-spacing:.08em;text-transform:uppercase;transition:top .3s}
+.skip:focus{top:16px}
+@media (max-width:760px){
+  .sec,.legacy,.hblog,.auction,.contact{padding-top:56px;padding-bottom:56px}
+  .figures{padding:48px 0 32px}
+  .chain__pin{padding:56px 0}
+}
+</style>
+<style>
+.doc-list .doc-soon{display:grid;grid-template-columns:110px 1fr auto;gap:20px;align-items:center;padding:22px 0;color:var(--ink-3)}
+.doc-list .doc-soon b{font:400 18px/1.35 var(--f-head);color:var(--ink-2)}
+.doc-list .doc-soon em{font:500 10px var(--f-mono);letter-spacing:.1em;font-style:normal;border:1px dashed var(--ink-3);padding:5px 8px;text-transform:uppercase}
+@media (max-width:760px){.doc-list .doc-soon{grid-template-columns:1fr auto;gap:6px 14px}.doc-list .doc-soon .mono{grid-column:1/-1}}
+</style>
 </head>
 <body class="page-blog">
+<a class="skip" href="#main">Saltar para o conteúdo</a>
 
 <!-- Header -->
 <header class="hdr" id="hdr">
@@ -710,7 +748,7 @@ body.on-hero .hdr.is-scrolled{background:rgba(0,0,0,.6)}
   <a class="btn btn--ink" href="index.html#compradores">Área do Comprador</a></div>
 </div>
 
-<main class="blog">
+<main id="main" class="blog">
   <section class="bhero">
     <div class="wrap">
       <p class="eyebrow">Perspectivas · Blog SODIAM</p>
@@ -742,15 +780,15 @@ body.on-hero .hdr.is-scrolled{background:rgba(0,0,0,.6)}
       <p class="ftr__claim">Tornar os diamantes em activos que geram <em>futuro brilhante</em> para Angola.</p>
     </div>
     <div class="ftr__cols">
-      <div><h4 class="mono">Institucional</h4><a href="index.html#institucional">Sobre nós</a><a href="index.html#governacao">Governação</a><a href="index.html#relatorios">Relatórios</a><a href="#">Carreiras</a></div>
+      <div><h4 class="mono">Institucional</h4><a href="index.html#institucional">Sobre nós</a><a href="administracao.html">Administração</a><a href="index.html#relatorios">Relatórios</a><a href="carreiras.html">Carreiras</a></div>
       <div><h4 class="mono">Operações</h4><a href="index.html#cadeia">Comercialização</a><a href="index.html#cadeia">Lapidação — PDDS</a><a href="index.html#sustentabilidade">Formação — CEFOLAD</a><a href="index.html#leiloes">Leilões</a></div>
-      <div><h4 class="mono">Ligações</h4><a href="https://itieangola.org/" target="_blank" rel="noopener">ITIE Angola ↗</a><a href="https://www.aidc-angola.com/" target="_blank" rel="noopener">AIDC ↗</a><a href="https://www.kimberleyprocess.com/" target="_blank" rel="noopener">Processo de Kimberley ↗</a><a href="#">Perguntas frequentes</a></div>
+      <div><h4 class="mono">Ligações</h4><a href="https://itieangola.org/" target="_blank" rel="noopener">ITIE Angola ↗</a><a href="https://www.aidc-angola.com/" target="_blank" rel="noopener">AIDC ↗</a><a href="https://www.kimberleyprocess.com/" target="_blank" rel="noopener">Processo de Kimberley ↗</a><a href="faq.html">Perguntas frequentes</a></div>
       <div><h4 class="mono">Newsletter</h4><p>Comunicados, leilões e relatórios no seu e-mail.</p><form class="nl" onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscrito ✓'"><input type="email" placeholder="O seu e-mail" aria-label="E-mail" required><button>Subscrever</button></form></div>
     </div>
     <div class="ftr__bot mono">
       <span>© 2000–2026 SODIAM, E.P. · Todos os direitos reservados</span>
       <span class="ftr__flag" aria-hidden="true"><i></i><i></i></span>
-      <span><a href="#">Privacidade</a> · <a href="#">Termos</a> · <a href="#">Acessibilidade</a></span>
+      <span><a href="legal.html#privacidade">Privacidade</a> · <a href="legal.html#termos">Termos</a> · <a href="legal.html#acessibilidade">Acessibilidade</a></span>
     </div>
   </div>
 </footer>
@@ -992,7 +1030,7 @@ gsap.utils.toArray('.reveal-img').forEach(el => {
 });
 
 /* ---------- Contadores ---------- */
-const fmt = (v, d) => v.toLocaleString('pt-PT', { minimumFractionDigits: d, maximumFractionDigits: d });
+const fmt = (v, d) => v.toLocaleString(document.documentElement.lang === 'en' ? 'en-GB' : 'pt-PT', { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: 'always' });
 document.querySelectorAll('.count').forEach(el => {
   const to = +el.dataset.to, d = +(el.dataset.dec || 0), o = { v: 0 };
   ScrollTrigger.create({ trigger: el, start: 'top 90%', once: true, onEnter: () =>
@@ -1236,7 +1274,23 @@ addEventListener('load', () => ScrollTrigger.refresh());
     'O brilho de Angola,': 'The brilliance of Angola,', 'gerido com rigor.': 'managed with rigour.',
     'Pioneira na comercialização transparente de diamantes em Angola, a SODIAM é, há mais de 26 anos, o canal através do qual o país leva os seus diamantes ao mundo — com ética, rigor e valor para os angolanos.':
       'A pioneer of transparent diamond trading in Angola, SODIAM has for more than 26 years been the channel through which the country takes its diamonds to the world — with ethics, rigour and value for Angolans.',
-    'Novo': 'New', '17.º leilão: +23,46% acima do valor esperado': '17th auction: +23.46% above expected value',
+    'Novo': 'New',
+    'Saltar para o conteúdo': 'Skip to content', 'Administração e Governação': 'Leadership and Governance', 'Carreiras': 'Careers', 'Privacidade, termos e acessibilidade': 'Privacy, terms and accessibility', 'Índice': 'Contents', 'Em breve': 'Coming soon', 'Administração': 'Leadership',
+    'Perguntas frequentes': 'FAQ', 'Legal': 'Legal', 'Enquadramento legal': 'Legal framework',
+    'Valorizamos e colocamos os diamantes angolanos nos principais centros mundiais — e promovemos a lapidação em Angola.': 'We value Angolan diamonds and place them in the world’s leading centres — while promoting cutting in Angola.',
+    'Do kimberlito e dos aluviões das Lundas, 27 empresas mineiras entregam a produção a um único canal: a SODIAM.': 'From the kimberlites and alluvials of the Lundas, 27 mining companies deliver their output to a single channel: SODIAM.',
+    'O PDDS e o centro de formação CEFOLAD acrescentam valor ao diamante dentro do país.': 'The PDDS and the CEFOLAD training centre add value to diamonds inside the country.',
+    'Sights, spots e leilões electrónicos abertos a compradores internacionais qualificados.': 'Sights, spots and electronic auctions open to qualified international buyers.',
+    'Gemólogos certificados fixam o valor de mercado de cada lote — preço justo para o Estado e os produtores.': 'Certified gemologists set each lot’s market value — a fair price for the State and producers.',
+    'Triagem por tamanho, modelo, qualidade e cor, com rastreabilidade de origem.': 'Sorted by size, model, quality and colour, with full traceability of origin.',
+    'Minas kimberlíticas e aluvionares entregam a produção à SODIAM, que regista cada lote.': 'Kimberlite and alluvial mines deliver their output to SODIAM, which records every lot.',
+    'Relatórios, contas e dados de mercado públicos, para que todos acompanhem o desempenho do sector.': 'Reports, accounts and market data made public, so everyone can follow the sector’s performance.',
+    'Rastreabilidade total, Processo de Kimberley e ITIE Angola: a base da confiança no diamante angolano.': 'Full traceability, the Kimberley Process and EITI Angola: the foundation of trust in Angolan diamonds.',
+    'Regras claras e um processo de qualificação rigoroso para novos compradores e para investidores na lapidação em Angola.': 'Clear rules and a rigorous qualification process for new buyers and for investors in cutting in Angola.',
+    'Encerrado a 26 de Junho de 2026, em Luanda. Desde 2019, os leilões electrónicos da SODIAM dão transparência e preço de mercado às pedras de maior valor de Angola.': 'Closed on 26 June 2026 in Luanda. Since 2019, SODIAM’s electronic auctions have brought transparency and market prices to Angola’s most valuable stones.',
+    'A produção concentra-se no Leste, com as Lundas no centro. Luanda coordena a comercialização; Saurimo transforma o diamante em indústria.': 'Production is concentrated in the East, with the Lundas at its heart. Luanda coordinates trading; Saurimo turns diamonds into industry.',
+    'Os primeiros a organizar o comércio do diamante angolano num canal único e a levar as pedras especiais de Angola a leilão electrónico internacional.': 'The first to organise Angola’s diamond trade into a single channel and to take Angolan special stones to international electronic auction.',
+    'A empresa pública que controla e supervisiona a comercialização de diamantes em Angola — o canal único por onde a produção nacional é avaliada, negociada e exportada.': 'The state-owned company that controls and supervises diamond trading in Angola — the single channel through which national production is valued, negotiated and exported.', '17.º leilão: +23,46% acima do valor esperado': '17th auction: +23.46% above expected value',
     'Conhecer a SODIAM': 'Discover SODIAM', 'Leilões de pedras especiais': 'Special stone auctions',
     'Do subsolo': 'From the ground', 'Do bruto': 'From rough', 'ao brilhante.': 'to brilliant.',
     'Nasce no kimberlito e nos aluviões das Lundas. 27 empresas mineiras — kimberlíticas e aluvionares — entregam a sua produção através de um único canal: a SODIAM.':
@@ -1502,11 +1556,18 @@ addEventListener('load', () => ScrollTrigger.refresh());
     }
     busy = false;
   });
+  // blocos com versão inglesa escrita à mão (data-en) — usados nas páginas institucionais
+  function bilingual() {
+    document.querySelectorAll('[data-en]').forEach(el => {
+      if (lang === 'en') { if (!el.hasAttribute('data-pt')) el.setAttribute('data-pt', el.innerHTML); el.innerHTML = el.getAttribute('data-en'); }
+      else if (el.hasAttribute('data-pt')) { el.innerHTML = el.getAttribute('data-pt'); el.removeAttribute('data-pt'); }
+    });
+  }
   function apply(l) {
     lang = l;
     try { localStorage.setItem('sodiam-lang', l); } catch (e) {}
     document.documentElement.lang = l === 'en' ? 'en' : 'pt-AO';
-    busy = true; walk(document.body); busy = false;
+    busy = true; bilingual(); walk(document.body); busy = false;
     // título do separador
     if (!window.__ptTitle) window.__ptTitle = document.title;
     document.title = l === 'en' ? window.__ptTitle.split(' — ').map(x => tr(x) ?? x).join(' — ') : window.__ptTitle;
