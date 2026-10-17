@@ -20,14 +20,24 @@
 
   // ---------- carregamento progressivo dos frames ----------
   const mobile = matchMedia('(max-width: 760px)').matches;
-  const dir = mobile ? SEQ.mobile : SEQ.desktop;
+  // cada dispositivo tem a sua sequência (telemóvel: metade dos frames, mais leve)
+  const dev = (mobile ? SEQ.m : SEQ.d) || { dir: mobile ? SEQ.mobile : SEQ.desktop, count: SEQ.count, ext: 'jpg' };
+  const dir = dev.dir, ext = dev.ext || 'jpg';
+  const ref = SEQ.count; // as chaves e etapas estão em frames da sequência de referência
+  if (dev.count !== ref) {
+    const k = (dev.count - 1) / (ref - 1);
+    if (SEQ.keys) SEQ.keys = SEQ.keys.map(([p, f]) => [p, f * k]);
+    if (SEQ.stages) SEQ.stages = SEQ.stages.map(f => f * k);
+    SEQ.count = dev.count;
+  }
   const frames = new Array(SEQ.count);
-  const name = i => dir + 'f' + String(i + 1).padStart(4, '0') + '.jpg';
+  const name = i => dir + 'f' + String(i + 1).padStart(4, '0') + '.' + ext;
   function load(i) {
     return new Promise(res => {
       const im = new Image();
       im.decoding = 'async';
-      im.onload = () => { (im.decode ? im.decode() : Promise.resolve()).catch(() => {}).then(() => { frames[i] = im; res(); }); };
+      // descodifica antes de usar, mas sem nunca bloquear (alguns browsers adiam decode() em separadores inactivos)
+      im.onload = () => { let done = false; const ok = () => { if (!done) { done = true; frames[i] = im; res(); } }; if (im.decode) im.decode().then(ok, ok); setTimeout(ok, 250); };
       im.onerror = () => res();
       im.src = name(i);
     });

@@ -3,7 +3,7 @@
 window.POSTS = [
   {
     slug: 'resultados-17-leilao',
-    cat: 'Leilões', date: '2026-06-26', read: 4, img: 'assets/img/leilao.jpg', featured: true,
+    cat: 'Leilões', date: '2026-06-26', read: 4, img: 'assets/img/leilao.webp', featured: true,
     title: '17.º leilão: diamantes angolanos superam em 23,46% o valor esperado',
     lead: 'Encerrado em Luanda, o 17.º leilão de diamantes em bruto da SODIAM gerou cerca de US$ 21,7 milhões líquidos e confirmou a confiança do mercado internacional na produção angolana.',
     body: [
@@ -18,7 +18,7 @@ window.POSTS = [
   },
   {
     slug: 'visita-gia',
-    cat: 'Institucional', date: '2026-01-23', read: 3, img: 'assets/img/news-gia.jpg',
+    cat: 'Institucional', date: '2026-01-23', read: 3, img: 'assets/img/news-gia.webp',
     title: 'Três Vice-Presidentes do GIA em visita técnica de alto nível à SODIAM',
     lead: 'A delegação do Gemological Institute of America conheceu de perto os processos de recepção, triagem e avaliação dos diamantes angolanos.',
     body: [
@@ -30,7 +30,7 @@ window.POSTS = [
   },
   {
     slug: 'exportacoes-2025',
-    cat: 'Mercado', date: '2026-06-04', read: 5, img: 'assets/img/mina-kimberlito.jpg',
+    cat: 'Mercado', date: '2026-06-04', read: 5, img: 'assets/img/mina-kimberlito.webp',
     title: '2025 em números: 17,8 milhões de quilates e US$ 1,8 mil milhões em exportações',
     lead: 'Angola manteve-se entre os maiores produtores mundiais de diamantes naturais, com um preço médio de US$ 101,70 por quilate.',
     body: [
@@ -43,7 +43,7 @@ window.POSTS = [
   },
   {
     slug: 'processo-kimberley',
-    cat: 'Sustentabilidade', date: '2026-04-15', read: 6, img: 'assets/img/triagem-real.jpg',
+    cat: 'Sustentabilidade', date: '2026-04-15', read: 6, img: 'assets/img/triagem-real.webp',
     title: 'Processo de Kimberley: como Angola garante diamantes livres de conflito',
     lead: 'Da mina à exportação, cada lote de diamantes angolanos é registado, certificado e acompanhado por documentação oficial.',
     body: [
@@ -57,7 +57,7 @@ window.POSTS = [
   },
   {
     slug: 'como-funciona-leilao',
-    cat: 'Leilões', date: '2026-03-04', read: 5, img: 'assets/img/pedra-especial.jpg',
+    cat: 'Leilões', date: '2026-03-04', read: 5, img: 'assets/img/pedra-especial.webp',
     title: 'Como funciona um leilão electrónico de pedras especiais',
     lead: 'Da selecção das pedras à adjudicação: um guia para compradores que pretendem participar nos leilões da SODIAM.',
     body: [
@@ -72,7 +72,7 @@ window.POSTS = [
   },
   {
     slug: 'lapidacao-pdds',
-    cat: 'Operações', date: '2026-02-10', read: 4, img: 'assets/img/pdds-aereo.jpg',
+    cat: 'Operações', date: '2026-02-10', read: 4, img: 'assets/img/pdds-aereo.webp',
     title: 'Lapidar em Angola: o Pólo de Desenvolvimento Diamantífero de Saurimo',
     lead: 'Transformar o diamante dentro do país é o próximo passo para multiplicar o seu valor para a economia angolana.',
     body: [
@@ -84,7 +84,7 @@ window.POSTS = [
   },
   {
     slug: 'cefolad-formacao',
-    cat: 'Sustentabilidade', date: '2026-01-08', read: 3, img: 'assets/img/cefolad.jpg',
+    cat: 'Sustentabilidade', date: '2026-01-08', read: 3, img: 'assets/img/cefolad.webp',
     title: 'CEFOLAD: formar a próxima geração de gemólogos e lapidadores angolanos',
     lead: 'A formação técnica é a base de uma indústria diamantífera nacional competitiva.',
     body: [
@@ -94,7 +94,7 @@ window.POSTS = [
   },
   {
     slug: 'encontro-talatona',
-    cat: 'Eventos', date: '2025-12-12', read: 2, img: 'assets/img/news-talatona.jpg',
+    cat: 'Eventos', date: '2025-12-12', read: 2, img: 'assets/img/news-talatona.webp',
     title: 'Encontro de alinhamento e liderança no Centro de Convenções de Talatona',
     lead: 'Quadros e liderança da SODIAM reuniram-se para alinhar prioridades estratégicas para o novo ciclo.',
     body: [
@@ -104,7 +104,7 @@ window.POSTS = [
   },
   {
     slug: '26-anos',
-    cat: 'Institucional', date: '2025-11-18', read: 3, img: 'assets/img/news-26anos.jpg',
+    cat: 'Institucional', date: '2025-11-18', read: 3, img: 'assets/img/news-26anos.webp',
     title: '26 anos a brilhar com Angola',
     lead: 'Fundada em Novembro de 1999, a SODIAM celebra mais de um quarto de século como guardiã do valor do diamante angolano.',
     body: [

@@ -1,7 +1,7 @@
 ﻿# Servidor local simples para pré-visualizar o site SODIAM
 param([int]$Port = 5173)
 $root = $PSScriptRoot
-$types = @{ ".html"="text/html; charset=utf-8"; ".css"="text/css"; ".js"="application/javascript"; ".svg"="image/svg+xml"; ".jpg"="image/jpeg"; ".png"="image/png"; ".mp4"="video/mp4" }
+$types = @{ ".html"="text/html; charset=utf-8"; ".css"="text/css"; ".js"="application/javascript"; ".svg"="image/svg+xml"; ".jpg"="image/jpeg"; ".png"="image/png"; ".mp4"="video/mp4"; ".webp"="image/webp"; ".xml"="application/xml"; ".txt"="text/plain" }
 $listener = [System.Net.HttpListener]::new()
 $listener.Prefixes.Add("http://localhost:$Port/")
 $listener.Start()

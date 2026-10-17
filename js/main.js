@@ -31,6 +31,7 @@ function intro() {
 
 /* ---------- Scroll suave ---------- */
 const lenis = new Lenis({ lerp: .1, smoothWheel: true });
+window.lenis = lenis;
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add(t => lenis.raf(t * 1000));
 gsap.ticker.lagSmoothing(0);
