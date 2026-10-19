@@ -26,6 +26,8 @@
     'Pioneira na comercialização transparente de diamantes em Angola, a SODIAM é, há mais de 26 anos, o canal através do qual o país leva os seus diamantes ao mundo — com ética, rigor e valor para os angolanos.':
       'A pioneer of transparent diamond trading in Angola, SODIAM has for more than 26 years been the channel through which the country takes its diamonds to the world — with ethics, rigour and value for Angolans.',
     'Novo': 'New',
+    'Angola · 21 províncias': 'Angola · 21 provinces', 'Ocorrências aluvionares junto às Lundas.': 'Alluvial occurrences next to the Lundas.',
+    'Áreas de prospecção diamantífera.': 'Diamond exploration areas.',
     'Saltar para o conteúdo': 'Skip to content', 'Em breve': 'Coming soon', 'Administração': 'Leadership',
     'Perguntas frequentes': 'FAQ', 'Legal': 'Legal', 'Enquadramento legal': 'Legal framework',
     'Valorizamos e colocamos os diamantes angolanos nos principais centros mundiais — e promovemos a lapidação em Angola.': 'We value Angolan diamonds and place them in the world’s leading centres — while promoting cutting in Angola.',

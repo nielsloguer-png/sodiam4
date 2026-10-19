@@ -221,7 +221,7 @@ em{font-style:normal}
 .map__info p{margin:0;color:var(--ink-2);font-size:15px}
 .map__svg svg{width:100%;height:auto;overflow:visible}
 .prov{fill:#fff;stroke:#c7cbd1;stroke-width:.7;transition:fill .4s var(--ease)}
-.prov--2{fill:#d6d9de}
+.prov--2{fill:#d6d9de;stroke:#fff;stroke-width:1}
 .prov--1{fill:var(--ink);stroke:#fff}
 .prov:hover{fill:var(--gold-soft)}
 .prov--1:hover{fill:#33363d}

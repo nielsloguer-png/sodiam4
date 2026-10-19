@@ -124,18 +124,18 @@ document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click
   const A = window.ANGOLA, wrap = document.getElementById('mapWrap'), info = document.getElementById('mapInfo');
   if (!A || !wrap) return;
   const main = { 'Lunda Norte': 'Principal pólo kimberlítico e aluvionar do país.', 'Lunda Sul': 'Sede do PDDS em Saurimo e de grandes minas kimberlíticas.' };
-  const other = { 'Malanje': 'Ocorrências aluvionares e projectos de prospecção.', 'Moxico': 'Áreas de prospecção e exploração aluvionar.', 'Bié': 'Ocorrências kimberlíticas em estudo.', 'Cuando Cubango': 'Áreas de prospecção diamantífera.' };
+  const other = { 'Malanje': 'Ocorrências aluvionares e projectos de prospecção.', 'Moxico': 'Áreas de prospecção e exploração aluvionar.', 'Moxico Leste': 'Ocorrências aluvionares junto às Lundas.', 'Bié': 'Ocorrências kimberlíticas em estudo.', 'Cuando': 'Áreas de prospecção diamantífera.', 'Cubango': 'Áreas de prospecção diamantífera.' };
   const pj = (lon, lat) => [(lon - A.minx) * A.k * A.sx, (A.maxy - lat) * A.sx];
   const pins = [
     { n: 'Luanda', s: 'Sede · SODIAM, E.P.', ll: [13.234, -8.839], dx: -14, anchor: 'end' },
-    { n: 'Saurimo · PDDS', s: 'PDDS · Pólo de lapidação', ll: [20.39, -9.66], dx: 14, anchor: 'start', light: true },
+    { n: 'Saurimo · PDDS', s: 'PDDS · Pólo de lapidação', ll: [20.39, -9.66], dx: -14, anchor: 'end', light: true },
   ];
   let svg = `<svg viewBox="-10 -10 ${A.w + 20} ${A.h + 20}" role="img" aria-label="Mapa de Angola com as províncias diamantíferas">`;
   for (const p of A.p) {
     const cls = main[p.name] ? 'prov prov--1' : other[p.name] ? 'prov prov--2' : 'prov';
     svg += `<path class="${cls}" d="${p.d}" data-n="${p.name}"><title>${p.name}</title></path>`;
   }
-  for (const p of A.p) if (main[p.name]) svg += `<text class="plabel" x="${p.cx}" y="${p.cy - (p.name === 'Lunda Sul' ? 22 : 0)}" text-anchor="middle">${p.name}</text>`;
+  for (const p of A.p) if (main[p.name]) svg += `<text class="plabel" x="${p.cx}" y="${p.cy - (p.name === 'Lunda Sul' ? 30 : 0)}" text-anchor="middle">${p.name}</text>`;
   for (const q of pins) {
     const [x, y] = pj(...q.ll);
     svg += `<g class="pin${q.light ? ' pin--light' : ''}"><circle class="r" cx="${x}" cy="${y}" r="9"/><circle class="p" cx="${x}" cy="${y}" r="4.5"/><text x="${x + q.dx}" y="${y + 4}" text-anchor="${q.anchor}">${q.n}</text></g>`;
